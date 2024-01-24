@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeSharp - My Sharps</title>
+  <style>
+    /* Common styles for the homepage and My Sharps */
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      color: white; /* Setting default text color */
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      overflow-y: auto;
+      display: none; /* Initially hide the sidebar */
+    }
+
+    .navbar {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      display: none; /* Initially hide the navbar */
+    }
+
+    .widgets {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px;
+      margin-left: 270px;
+      margin-top: 100px;
+      display: none; /* Initially hide the widgets */
+    }
+
+    /* My Sharps specific styles */
+    .mysharps-heading {
+      color: black; /* Set text color for My Sharps heading */
+    }
+
+    .login-container {
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 50px;
+      display: block; /* Initially show the login form */
+    }
+
+    .login-container h2 {
+      color: black;
+    }
+
+    .login-container label {
+      color: black;
+      display: block;
+      margin-top: 15px;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 8px;
+      margin-bottom: 20px;
+    }
+
+    .login-container button {
+      background-color: #cee534;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      color: black;
+      cursor: pointer;
+    }
+
+    .login-container button:hover {
+      background-color: yellow;
+    }
+
+    /* Additional styles for buttons in the sidebar, navbar, and widgets */
+    .sidebar-button, .navbar button, .widget a {
+      background-color: #cee534;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      padding: 10px 20px;
+      margin-bottom: 10px;
+      display: block;
+      text-align: center;
+      color: black; /* Set text color for buttons */
+      cursor: pointer;
+    }
+
+    .sidebar-button:hover, .navbar button:hover, .widget a:hover {
+      background-color: yellow;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <img src="CodeSharp.png" alt="CodeSharp Logo" width="150" style="display: block; margin: 0 auto; margin-bottom: 20px;">
+    <div class="sidebar-button">
+      <a href="mysharps.html">My Sharps</a>
+    </div>
+    <div class="sidebar-button">
+      <a href="support.html">Support Code Sharp</a>
+    </div>
+    <div class="sidebar-button">
+      <a href="news.html">News</a>
+    </div>
+    <div class="sidebar-button">
+      <a href="help.html">Help</a>
+    </div>
+    <div class="bottom-text">Update 1.0</div>
+    <h3 class="sidebar-name">GoldMic</h3>
+  </div>
+
+  <div class="navbar">
+    <h1>Your Name</h1>
+    <h1>CodeSharp</h1>
+    <button onclick="toggleBrightness()">Change Theme</button>
+  </div>
+
+  <!-- Login form -->
+  <div class="login-container">
+    <h2>Login to access your projects</h2>
+    <form id="login-form">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="button" onclick="login()">Login</button>
+    </form>
+  </div>
+
+  <div class="widgets">
+    <div class="widget">
+      <a href="project1.html">
+        <h3>Sharp 1</h3>
+      </a>
+    </div>
+    <div class="widget">
+      <a href="project2.html">
+        <h3>Sharp 2</h3>
+      </a>
+    </div>
+    <div class="widget">
+      <a href="project3.html">
+        <h3>Sharp 3</h3>
+      </a>
+    </div>
+    <div class="widget">
+      <a href="project4.html">
+        <h3>Sharp 4</h3>
+      </a>
+    </div>
+    <div class="widget">
+      <a href="project5.html">
+        <h3>Sharp 5</h3>
+      </a>
+    </div>
+    <div class="widget">
+      <a href="project6.html">
+        <h3>Sharp 6</h3>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function toggleBrightness() {
+      const body = document.querySelector('body');
+      if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+      } else {
+        body.classList.add('dark-mode');
+      }
+    }
+
+    function login() {
+      // Replace this with actual login logic
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Dummy check for demonstration purposes
+      if (email === 'zxcsswer@gmail.com' && password === 'Cupid11223') {
+        alert('Login successful!');
+        // Show the sidebar, navbar, and widgets after successful login
+        document.querySelector('.sidebar').style.display = 'block';
+        document.querySelector('.navbar').style.display = 'flex';
+        document.querySelector('.widgets').style.display = 'flex';
+        // Hide the login form
+        document.querySelector('.login-container').style.display = 'none';
+      } else {
+        alert('Wrong email/password. Please try again.');
+      }
+    }
+  </script>
+</body>
+</html>
